@@ -41,18 +41,45 @@ class CuentaTest {
 
 		Cuenta cuenta67890 = new Cuenta();
 		cuenta67890.ingresar(0.00);  
-
+		
+		System.out.println("CUENTA 12345 ->") ;
+		System.out.println(cuenta12345.getSaldo()) ;
 		cuenta12345.retirar(200.00); // 1
+		System.out.println(cuenta12345.getSaldo()) ;
+		
+		System.out.println("CUENTA 67890 ->") ;
 		cuenta67890.retirar(350.00); // 2
+		System.out.println(cuenta67890.getSaldo()) ;
+		
+		
+		System.out.println("CUENTA 12345 ->") ;
 		cuenta12345.ingresar(100.00); // 3
+		System.out.println(cuenta12345.getSaldo()) ;
+		
+		System.out.println("CUENTA 67890 ->") ;
 		cuenta67890.retirar(200.00); // 4 (Este falla por fondos insuficientes)
+		System.out.println(cuenta67890.getSaldo()) ;
+		
+		System.out.println("CUENTA 67890 ->") ;
 		cuenta67890.retirar(150.00); // 5
+		System.out.println(cuenta67890.getSaldo()) ;
+		
+		System.out.println("CUENTA 12345 ->") ;
 		cuenta12345.retirar(200.00); // 6
+		System.out.println(cuenta12345.getSaldo()) ;
+		
+		System.out.println("CUENTA 67890 ->") ;
 		cuenta67890.ingresar(50.00);  // 7
+		System.out.println(cuenta67890.getSaldo()) ;
+		
+		System.out.println("CUENTA 67890 ->") ;
 		cuenta67890.retirar(100.00); // 8 (Este falla por fondos insuficientes)
+		System.out.println(cuenta67890.getSaldo()) ;
 
 		// Resultados esperados
 		assertEquals(-250.00, cuenta12345.getSaldo(), "El saldo de 12345 debe ser -250€");
+		System.out.println(cuenta12345.getSaldo()) ; 
 		assertEquals(-450.00, cuenta67890.getSaldo(), "El saldo de 67890 debe ser -450€");
+		System.out.println(cuenta67890.getSaldo()) ; 
 	}
 }

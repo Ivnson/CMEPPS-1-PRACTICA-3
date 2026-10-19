@@ -24,7 +24,13 @@ public class Cuenta {
     }
 
     public void retirar(double cantidad) {
-        this.saldo -= cantidad ; 
+    	if (this.saldo - cantidad >= -500.00)
+    	{
+    		this.saldo -= cantidad ; 
+    	}
+    	else {
+            System.out.println("Fondos insuficientes (saldo " + this.saldo + "€) para el reintegro de " + cantidad + "€");
+        }
     }
     
     

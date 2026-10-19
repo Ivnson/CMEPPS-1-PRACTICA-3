@@ -8,10 +8,12 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import SESION3_PACKAGE.Cuenta;
+
 class CuentaTest {
 
 	@Test
-	void testPrincipal() {
+	void testIngresar() {
 		Cuenta cuenta = new Cuenta() ; 
 		cuenta.ingresar(100.00) ;
 		

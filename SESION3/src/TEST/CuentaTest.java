@@ -82,4 +82,21 @@ class CuentaTest {
 		assertEquals(-450.00, cuenta67890.getSaldo(), "El saldo de 67890 debe ser -450€");
 		System.out.println(cuenta67890.getSaldo()) ; 
 	}
+	
+	@Test
+	void testIngresoAgregaMovimiento() {
+		cuenta.ingresar(100.00);
+		
+		// la lista tiene 1 elemento tras un ingreso? 
+		assertEquals(1, cuenta.mMovimientos.size(), "La lista debe tener 1 movimiento tras el ingreso");
+	}
+
+	@Test
+	void testRetirarAgregaMovimiento() {
+		cuenta.ingresar(100.00); // Debería registrar el primer movimiento
+		cuenta.retirar(30.00);   // Debería registrar el segundo movimiento
+		
+		// la lista tiene 2 elementos en total? 
+		assertEquals(2, cuenta.mMovimientos.size(), "La lista debe tener 2 movimientos en total");
+	}
 }

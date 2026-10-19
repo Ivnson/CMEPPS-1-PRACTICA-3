@@ -17,7 +17,7 @@ class CuentaTest {
 		Cuenta cuenta = new Cuenta() ; 
 		cuenta.ingresar(100.00) ;
 		
-		assertEquals(100.00, cuenta.getSaldo()) ; 
+		assertEquals(100.00, cuenta.getSaldo()); 
 	}
 
 }

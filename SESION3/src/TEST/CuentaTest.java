@@ -12,22 +12,24 @@ import SESION3_PACKAGE.Cuenta;
 
 class CuentaTest {
 
+	Cuenta cuenta = null; 
+	
+	@BeforeEach
+	void setUp() throws Exception
+	{
+		cuenta = new Cuenta() ; 
+	}
+
 	@Test
 	void testIngresar() {
-		Cuenta cuenta = new Cuenta() ; 
-		cuenta.ingresar(100.00) ;
-		
-		assertEquals(100.00, cuenta.getSaldo()); 
+		cuenta.ingresar(100.00);
+		assertEquals(100.00, cuenta.getSaldo());
 	}
-	
-	
+
 	@Test
-	void testRetirar()
-	{
-		Cuenta cuenta = new Cuenta() ; 
+	void testRetirar() {
 		cuenta.ingresar(100.00);
 		cuenta.retirar(30.00);
-		
 		assertEquals(70.00, cuenta.getSaldo());
 	}
 }
